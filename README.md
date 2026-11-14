@@ -115,6 +115,7 @@ carpeta del repositorio; no puede editar su propia configuración.
 3. Importe el repositorio en Vercel y cargue las variables de entorno.
 4. `vercel deploy --prod` (el comando lo ejecuta una persona, no la IA).
 5. Compruebe `GET /api/health` desde el teléfono.
-6. Asigne el rol `admin` con `setCustomUserClaims` desde un script seguro.
+6. Asigne el rol `admin` con `setCustomUserClaims` desde un script seguro:
+   `node scripts/set-admin.mjs <uid>` (con las variables de entorno de desarrollo).
 
 > Para el reto de IA, la configuración queda en el primer commit de este repositorio.
