@@ -29,6 +29,12 @@ export type AuthTokens = {
   usuario: { id: string; email: string };
 };
 
+export type RefreshTokens = {
+  token: string;
+  refreshToken: string;
+  expiraEnSeg: number;
+};
+
 type FirebaseErrorCode =
   | "EMAIL_EXISTS"
   | "EMAIL_NOT_FOUND"
@@ -108,7 +114,7 @@ export async function signInWithEmail(email: string, password: string): Promise<
   return toAuthTokens(data);
 }
 
-export async function refreshSession(refreshToken: string): Promise<AuthTokens> {
+export async function refreshSession(refreshToken: string): Promise<RefreshTokens> {
   const key = firebaseWebApiKey();
   const data = await postFirebase(
     `https://securetoken.googleapis.com/v1/token?key=${key}`,
@@ -119,6 +125,5 @@ export async function refreshSession(refreshToken: string): Promise<AuthTokens> 
     token: data.id_token,
     refreshToken: data.refresh_token,
     expiraEnSeg: Number.parseInt(data.expires_in, 10),
-    usuario: { id: data.user_id, email: "" },
   };
 }

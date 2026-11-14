@@ -95,6 +95,9 @@ CI en GitHub Actions ejecuta `check`, `build` y `npm audit --audit-level=high`.
 - Firestore se usa solo con Admin SDK; `firestore.rules` niega todo a clientes.
 - `.env*`, claves y cuentas de servicio están en `.gitignore`; `env.example` solo
   tiene valores falsos.
+- Limite la tasa de intentos de login (por ejemplo, con el Firewall de Vercel)
+  antes de usar datos reales; no se incluye un limitador en memoria porque en
+  serverless no es confiable.
 - Contraseñas y tokens nunca se registran en logs.
 
 ## Configuración de IA
