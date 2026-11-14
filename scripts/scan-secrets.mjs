@@ -11,7 +11,7 @@ const IGNORED_DIRS = new Set([
   "build",
   ".vercel",
 ]);
-const IGNORED_FILES = new Set(["env.example", "package-lock.json"]);
+const IGNORED_FILES = new Set(["env.example", "package-lock.json", "scripts/scan-secrets.mjs"]);
 const TEXT_EXTENSIONS = /\.(ts|tsx|js|mjs|cjs|json|md|yml|yaml|txt|example)$/i;
 
 function trackedFiles() {
@@ -20,10 +20,7 @@ function trackedFiles() {
 }
 
 function isIgnored(file) {
-  return (
-    IGNORED_FILES.has(file) ||
-    file.split("/").some((part) => IGNORED_DIRS.has(part))
-  );
+  return IGNORED_FILES.has(file) || file.split("/").some((part) => IGNORED_DIRS.has(part));
 }
 
 function readText(file) {

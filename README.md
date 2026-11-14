@@ -9,14 +9,14 @@ Auth + Firestore (Admin SDK) + PokéAPI, desplegada en Vercel.
 
 ## Stack
 
-| Pieza | Uso |
-|---|---|
-| Next.js 16 (Route Handlers, runtime Node) | API en Vercel |
-| Firebase Admin SDK | Auth y Firestore, solo desde el servidor |
-| Firebase Auth REST | Registro, login y refresh con `FIREBASE_WEB_API_KEY` |
-| Zod | Validación de cuerpos, consultas y respuestas |
-| PokéAPI | Datos públicos cacheados en `cache_pokemon` |
-| Vitest | Pruebas de rutas y servicios |
+| Pieza                                     | Uso                                                  |
+| ----------------------------------------- | ---------------------------------------------------- |
+| Next.js 16 (Route Handlers, runtime Node) | API en Vercel                                        |
+| Firebase Admin SDK                        | Auth y Firestore, solo desde el servidor             |
+| Firebase Auth REST                        | Registro, login y refresh con `FIREBASE_WEB_API_KEY` |
+| Zod                                       | Validación de cuerpos, consultas y respuestas        |
+| PokéAPI                                   | Datos públicos cacheados en `cache_pokemon`          |
+| Vitest                                    | Pruebas de rutas y servicios                         |
 
 ## Estructura
 
@@ -43,21 +43,21 @@ ia/                          configuración y evidencias de IA
 
 ## Endpoints
 
-| Método y ruta | Auth | Descripción |
-|---|---|---|
-| `GET /api/health` | — | Estado del servicio |
-| `POST /api/auth/registro` | — | `{ email, password }` → 201 tokens |
-| `POST /api/auth/login` | — | `{ email, password }` → 200 tokens |
-| `POST /api/auth/refresh` | — | `{ refreshToken }` → tokens nuevos |
-| `GET /api/auth/yo` | Bearer | Usuario del token |
-| `GET /api/pokemon?offset=&limit=&q=` | Bearer | Lista paginada con caché |
-| `GET /api/pokemon/:id` | Bearer | Detalle con caché |
-| `GET /api/favorito?since=` | Bearer | Favoritos del usuario (incluye borrados) |
-| `PUT /api/favorito/:id` | Bearer | Upsert idempotente |
-| `DELETE /api/favorito/:id` | Bearer | Borrado lógico |
-| `GET /api/equipo` | Bearer | Equipo actual |
-| `PUT /api/equipo` | Bearer | Reemplazo en batch, máx. 6 sin repetidos |
-| `GET /api/admin/resumen` | Bearer + `rol=admin` | Ruta de administración |
+| Método y ruta                        | Auth                 | Descripción                              |
+| ------------------------------------ | -------------------- | ---------------------------------------- |
+| `GET /api/health`                    | —                    | Estado del servicio                      |
+| `POST /api/auth/registro`            | —                    | `{ email, password }` → 201 tokens       |
+| `POST /api/auth/login`               | —                    | `{ email, password }` → 200 tokens       |
+| `POST /api/auth/refresh`             | —                    | `{ refreshToken }` → tokens nuevos       |
+| `GET /api/auth/yo`                   | Bearer               | Usuario del token                        |
+| `GET /api/pokemon?offset=&limit=&q=` | Bearer               | Lista paginada con caché                 |
+| `GET /api/pokemon/:id`               | Bearer               | Detalle con caché                        |
+| `GET /api/favorito?since=`           | Bearer               | Favoritos del usuario (incluye borrados) |
+| `PUT /api/favorito/:id`              | Bearer               | Upsert idempotente                       |
+| `DELETE /api/favorito/:id`           | Bearer               | Borrado lógico                           |
+| `GET /api/equipo`                    | Bearer               | Equipo actual                            |
+| `PUT /api/equipo`                    | Bearer               | Reemplazo en batch, máx. 6 sin repetidos |
+| `GET /api/admin/resumen`             | Bearer + `rol=admin` | Ruta de administración                   |
 
 Errores: `{ "error": "mensaje", "detalles"?: [{ "campo", "mensaje" }] }`.
 

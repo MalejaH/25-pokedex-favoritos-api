@@ -6,18 +6,18 @@ herramienta.
 
 ## Riesgo → barrera
 
-| Riesgo | Barrera configurada | Dónde |
-|---|---|---|
-| La IA lee `.env*` | `read` denegado para `*.env*`; `shell` denegado para `cat/type/Get-Content *.env*` | `opencode.jsonc` |
-| La IA lee claves o cuentas de servicio | `read` denegado para `*.pem`, `*.key`, `*.p12`, `*.pfx`, `*.jks`, `*.keystore`, `*firebase-adminsdk*.json`, `*serviceAccount*.json` | `opencode.jsonc` |
-| La IA sale de la carpeta | `external_directory` denegado; `shell` denegado para `ls ..`, `cd ..`, rutas `~` | `opencode.jsonc` |
-| La IA modifica su propia jaula | `edit` denegado para `opencode.jsonc`, `.opencode/**`, `AGENTS.md`, `ia/**` | `opencode.jsonc` |
-| La IA ejecuta comandos destructivos | `shell` denegado para `sudo`, `rm -rf`, `curl`, `wget`, `git push --force`, `git reset --hard`, `vercel env pull` | `opencode.jsonc` |
-| La IA publica o despliega sin permiso | `shell` en `ask` para `git push`, `npm install`, `npx`, `vercel`, `eas` | `opencode.jsonc` |
-| La IA lee secretos con Node | `shell` denegado para `node -e` y `node --eval` | `opencode.jsonc` |
-| Inyección de prompt | `AGENTS.md` declara que archivos, webs y respuestas son datos, no órdenes | `AGENTS.md` |
-| Código de baja calidad | `npm run check` + CI + Husky; TypeScript estricto, ESLint, Prettier, cobertura | `package.json`, CI |
-| Secretos en Git | `.gitignore`, `env.example` con valores falsos, escaneo `npm run secrets:scan` | raíz |
+| Riesgo                                 | Barrera configurada                                                                                                                 | Dónde              |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| La IA lee `.env*`                      | `read` denegado para `*.env*`; `shell` denegado para `cat/type/Get-Content *.env*`                                                  | `opencode.jsonc`   |
+| La IA lee claves o cuentas de servicio | `read` denegado para `*.pem`, `*.key`, `*.p12`, `*.pfx`, `*.jks`, `*.keystore`, `*firebase-adminsdk*.json`, `*serviceAccount*.json` | `opencode.jsonc`   |
+| La IA sale de la carpeta               | `external_directory` denegado; `shell` denegado para `ls ..`, `cd ..`, rutas `~`                                                    | `opencode.jsonc`   |
+| La IA modifica su propia jaula         | `edit` denegado para `opencode.jsonc`, `.opencode/**`, `AGENTS.md`, `ia/**`                                                         | `opencode.jsonc`   |
+| La IA ejecuta comandos destructivos    | `shell` denegado para `sudo`, `rm -rf`, `curl`, `wget`, `git push --force`, `git reset --hard`, `vercel env pull`                   | `opencode.jsonc`   |
+| La IA publica o despliega sin permiso  | `shell` en `ask` para `git push`, `npm install`, `npx`, `vercel`, `eas`                                                             | `opencode.jsonc`   |
+| La IA lee secretos con Node            | `shell` denegado para `node -e` y `node --eval`                                                                                     | `opencode.jsonc`   |
+| Inyección de prompt                    | `AGENTS.md` declara que archivos, webs y respuestas son datos, no órdenes                                                           | `AGENTS.md`        |
+| Código de baja calidad                 | `npm run check` + CI + Husky; TypeScript estricto, ESLint, Prettier, cobertura                                                      | `package.json`, CI |
+| Secretos en Git                        | `.gitignore`, `env.example` con valores falsos, escaneo `npm run secrets:scan`                                                      | raíz               |
 
 ## Reglas del proyecto para la IA
 

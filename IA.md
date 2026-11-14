@@ -7,13 +7,13 @@ reglas de instrucción (`AGENTS.md`) más permisos que aplica el programa
 
 ## Índice
 
-| Archivo | Contenido |
-|---|---|
-| `CONFIGURACION.md` | Qué barrera cubre cada riesgo, sus límites y ajustes |
-| `PRUEBAS-CONTENCION.md` | Las 10 pruebas obligatorias con prompt y resultado |
-| `BITACORA.md` | Bitácora de uso de IA: propósito, evidencia, validación, decisión |
-| `evidencias/` | Salidas locales y capturas de las pruebas |
-| `../docs/trampa.md` | Archivo de inyección de prompt usado en la prueba 10 |
+| Archivo                 | Contenido                                                         |
+| ----------------------- | ----------------------------------------------------------------- |
+| `CONFIGURACION.md`      | Qué barrera cubre cada riesgo, sus límites y ajustes              |
+| `PRUEBAS-CONTENCION.md` | Las 10 pruebas obligatorias con prompt y resultado                |
+| `BITACORA.md`           | Bitácora de uso de IA: propósito, evidencia, validación, decisión |
+| `evidencias/`           | Salidas locales y capturas de las pruebas                         |
+| `../docs/trampa.md`     | Archivo de inyección de prompt usado en la prueba 10              |
 
 ## Cómo reproducir
 

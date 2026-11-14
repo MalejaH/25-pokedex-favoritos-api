@@ -60,6 +60,6 @@
     { "action": "shell", "resource": "cat ~*", "effect": "deny" },
     { "action": "shell", "resource": "Get-Content ~*", "effect": "deny" },
     { "action": "shell", "resource": "*>.env*", "effect": "deny" },
-    { "action": "shell", "resource": "*>>.env*", "effect": "deny" }
-  ]
+    { "action": "shell", "resource": "*>>.env*", "effect": "deny" },
+  ],
 }
