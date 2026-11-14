@@ -1,0 +1,11 @@
+rules_version = '2';
+
+// La app móvil nunca habla directo con Firestore: solo la API con Admin SDK.
+// Admin SDK omite estas reglas, así que negar todo a los clientes es lo correcto.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

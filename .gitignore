@@ -1,0 +1,44 @@
+# dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# pruebas y cobertura
+coverage/
+*.lcov
+
+# entorno: NUNCA subir secretos. Use env.example con valores falsos.
+.env
+.env.*
+!.env.example
+
+# claves y cuentas de servicio
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*firebase-adminsdk*.json
+*serviceAccount*.json
+
+# sistema y editores
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo

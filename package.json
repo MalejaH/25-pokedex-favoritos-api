@@ -1,0 +1,49 @@
+{
+  "name": "25-pokedex-favoritos-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API de la Pokédex con favoritos: Next.js + Firebase Admin + Firestore + PokéAPI",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "secrets:scan": "node scripts/scan-secrets.mjs",
+    "check": "npm run secrets:scan && npm run typecheck && npm run lint && npm run format:check && npm run test",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.5.1",
+    "next": "^16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.3.0",
+    "@vitest/coverage-v8": "^5.1.0",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.4.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,json,md,css}": [
+      "prettier --write",
+      "eslint --fix --max-warnings 0"
+    ]
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
