@@ -107,6 +107,12 @@ Ver [`IA.md`](IA.md), [`ia/CONFIGURACION.md`](ia/CONFIGURACION.md),
 [`ia/BITACORA.md`](ia/BITACORA.md). La IA no lee `.env*`, claves ni sale de la
 carpeta del repositorio; no puede editar su propia configuración.
 
+## Guía de finalización y sustentación
+
+La guía paso a paso para desplegar, probar y generar el APK, junto con el guion
+de sustentación, está en el repositorio de la app:
+<https://github.com/MalejaH/25-pokedex-favoritos-app/tree/main/docs>.
+
 ## Despliegue
 
 1. Cree el proyecto de Firebase, habilite Email/Password y Firestore en modo
